@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SOC Offline Preview</title>
+    <style>
+      body { margin:0; background:#060912; color:#d5e4ff; font-family:Inter,system-ui; }
+      .wrap { max-width: 1200px; margin: 0 auto; padding: 20px; display:grid; gap:12px; }
+      .card { border:1px solid #2f4c73; border-radius:12px; padding:12px; background:rgba(20,35,55,.45); }
+      .metrics { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+      .grid { display:grid; grid-template-columns:2fr 1fr; gap:12px; }
+      .risk-row { display:grid; grid-template-columns:70px 1fr 28px; gap:8px; align-items:center; margin:8px 0; }
+      .track { height:10px; background:#1e3858; border-radius:999px; overflow:hidden; }
+      .fill { height:100%; border-radius:999px; }
+      .trend { min-height:80px; display:flex; align-items:flex-end; gap:6px; }
+      .bar { flex:1; min-width:12px; border-radius:6px 6px 0 0; background:linear-gradient(180deg,#34efff,#0f5f9f); }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="card"><h2>SOC Command Center (Offline Preview)</h2></div>
+      <div class="card metrics">
+        <div><strong>12</strong><br/>Incidents</div><div><strong>2</strong><br/>Critical</div><div><strong>4</strong><br/>High</div><div><strong>9</strong><br/>Open Cases</div>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Incident Feed</h3><p>Aligned list layout and interactive panel placement preview.</p></div>
+        <div class="card">
+          <h3>Risk Charts</h3>
+          <div class="risk-row"><span>Low</span><div class="track"><div class="fill" style="width:25%;background:#00ff9d"></div></div><span>1</span></div>
+          <div class="risk-row"><span>Medium</span><div class="track"><div class="fill" style="width:50%;background:#00d5ff"></div></div><span>2</span></div>
+          <div class="risk-row"><span>High</span><div class="track"><div class="fill" style="width:75%;background:#ffaa00"></div></div><span>3</span></div>
+          <div class="risk-row"><span>Critical</span><div class="track"><div class="fill" style="width:100%;background:#ff3f6b"></div></div><span>4</span></div>
+          <div class="trend"><div class="bar" style="height:16px"></div><div class="bar" style="height:24px"></div><div class="bar" style="height:40px"></div><div class="bar" style="height:64px"></div></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

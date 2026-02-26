@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata: { name: soc-config }
+data:
+  REDIS_URL: redis://redis:6379/0
+---
+apiVersion: v1
+kind: Secret
+metadata: { name: soc-secret }
+type: Opaque
+stringData:
+  JWT_SECRET: change-me
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata: { name: soc-ingress }
+spec:
+  rules:
+  - host: soc.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service: { name: soc-frontend, port: { number: 80 } }
+      - path: /api
+        pathType: Prefix
+        backend:
+          service: { name: soc-backend, port: { number: 8000 } }

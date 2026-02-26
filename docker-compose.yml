@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["8000:8000"]
+    depends_on: [redis, ollama]
+  frontend:
+    build: ./frontend
+    ports: ["5173:5173"]
+    environment:
+      - VITE_API_URL=http://localhost:8000
+      - VITE_WS_URL=ws://localhost:8000
+    depends_on: [backend]
+  redis:
+    image: redis:7-alpine
+    ports: ["6379:6379"]
+  ollama:
+    image: ollama/ollama:latest
+    ports: ["11434:11434"]
+  sandbox:
+    image: docker:26-dind
+    privileged: true
