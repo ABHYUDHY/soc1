@@ -1,10 +1,2 @@
 import React from 'react'
-
-export default function IncidentDrilldownDrawer({ incident }) {
-  return (
-    <div className='card'>
-      <h3>Raw Event Drilldown</h3>
-      <pre className='json-block'>{incident?.raw_log || 'No incident selected.'}</pre>
-    </div>
-  )
-}
+export default ({ incident }) => <div className='card'><h3>Drilldown</h3><div>{incident?.raw_log}</div></div>

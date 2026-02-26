@@ -97,19 +97,3 @@ kubectl apply -f k8s/platform.yaml
 
 ## SOC Pipeline
 Detection → Analysis → Enrichment → Risk → Mitigation → Validation → Execution → Logging → Case Creation → SLA Tracking
-
-
-## Environment Troubleshooting (CI / Restricted Network)
-If `npm install` fails with `403 Forbidden` in restricted environments:
-- The code changes can still be reviewed and linted via source checks.
-- Run frontend install/build on a network-enabled machine or internal npm mirror.
-
-### Offline Visual Preview (no npm required)
-To validate layout/screenshots without installing frontend dependencies:
-```bash
-python3 -m http.server 8765 --directory frontend
-```
-Then open:
-- `http://127.0.0.1:8765/offline-preview.html`
-
-This preview is intended for alignment/chart sanity checks when Vite cannot be started.
