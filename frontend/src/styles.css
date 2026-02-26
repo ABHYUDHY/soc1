@@ -1,0 +1,14 @@
+:root { color-scheme: dark; font-family: Inter, system-ui; }
+body { margin:0; background: radial-gradient(circle at 20% 20%, #101a2f, #060912 60%); color:#d5e4ff; }
+.dashboard { padding:16px; display:grid; gap:14px; }
+.grid { display:grid; gap:12px; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); }
+.card { backdrop-filter: blur(10px); background: rgba(20,35,55,.45); border:1px solid rgba(110,180,255,.35); border-radius:14px; padding:12px; box-shadow: 0 0 20px rgba(0,255,255,.08); }
+.badge { padding:2px 8px; border-radius:999px; font-size:12px; }
+.badge-critical{background:#ff366a44;color:#ff7ea0; animation:pulse 1s infinite}
+.badge-high{background:#ff9c0044;color:#ffcf77}
+.badge-medium{background:#00c8ff33;color:#7fe9ff}
+.badge-low{background:#00ff8c33;color:#95ffc8}
+@keyframes pulse {0%{opacity:1}50%{opacity:.4}100%{opacity:1}}
+.metric {font-size: 24px; color:#8ef9ff;}
+button{background:#00dbff22;border:1px solid #45edff66;color:#bff7ff;border-radius:8px;padding:6px 10px}
+input,select,textarea{width:100%;background:#0a1322;border:1px solid #33557e;color:#d2e3ff;padding:8px;border-radius:8px}
